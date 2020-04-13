@@ -55,6 +55,10 @@
 #define FAN_THERMO_MAX_TEMP 60
 #define FAN_THERMO_THERMISTOR_PIN -1
 #define FAN_THERMO_THERMISTOR_TYPE 1
+#undef Y_MIN_PIN
+#define Y_MIN_PIN -1
+#undef Z_MIN_PIN
+#define Z_MIN_PIN -1
 
 //#define EXTERNALSERIAL  use Arduino serial library instead of build in. Requires more ram, has only 63 byte input buffer.
 // Uncomment the following line if you are using Arduino compatible firmware made for Arduino version earlier then 1.0
@@ -242,14 +246,14 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define MULTI_ZENDSTOP_HOMING 0
 #define ENDSTOP_PULLUP_X_MIN true
-#define ENDSTOP_X_MIN_INVERTING true
+#define ENDSTOP_X_MIN_INVERTING false
 #define MIN_HARDWARE_ENDSTOP_X true
 #define ENDSTOP_PULLUP_Y_MIN true
-#define ENDSTOP_Y_MIN_INVERTING true
-#define MIN_HARDWARE_ENDSTOP_Y true
+#define ENDSTOP_Y_MIN_INVERTING false
+#define MIN_HARDWARE_ENDSTOP_Y false
 #define ENDSTOP_PULLUP_Z_MIN true
-#define ENDSTOP_Z_MIN_INVERTING true
-#define MIN_HARDWARE_ENDSTOP_Z true
+#define ENDSTOP_Z_MIN_INVERTING false
+#define MIN_HARDWARE_ENDSTOP_Z false
 #define ENDSTOP_PULLUP_Z2_MINMAX true
 #define ENDSTOP_Z2_MINMAX_INVERTING false
 #define MINMAX_HARDWARE_ENDSTOP_Z2 false
@@ -258,10 +262,10 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MAX_HARDWARE_ENDSTOP_X false
 #define ENDSTOP_PULLUP_Y_MAX true
 #define ENDSTOP_Y_MAX_INVERTING false
-#define MAX_HARDWARE_ENDSTOP_Y false
+#define MAX_HARDWARE_ENDSTOP_Y true
 #define ENDSTOP_PULLUP_Z_MAX true
 #define ENDSTOP_Z_MAX_INVERTING false
-#define MAX_HARDWARE_ENDSTOP_Z false
+#define MAX_HARDWARE_ENDSTOP_Z true
 #define ENDSTOP_PULLUP_X2_MIN true
 #define ENDSTOP_PULLUP_Y2_MIN true
 #define ENDSTOP_PULLUP_Z2_MINMAX true
@@ -286,11 +290,11 @@ It also can add a delay to wait for spindle to run on full speed.
 #define max_software_endstop_r true
 
 #define min_software_endstop_x false
-#define min_software_endstop_y false
-#define min_software_endstop_z false
+#define min_software_endstop_y true
+#define min_software_endstop_z true
 #define max_software_endstop_x true
-#define max_software_endstop_y true
-#define max_software_endstop_z true
+#define max_software_endstop_y false
+#define max_software_endstop_z false
 #define DOOR_PIN -1
 #define DOOR_PULLUP 1
 #define DOOR_INVERTING 0
@@ -300,9 +304,9 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_X_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Y_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 3
-#define ENDSTOP_X_BACK_ON_HOME 1
-#define ENDSTOP_Y_BACK_ON_HOME 1
-#define ENDSTOP_Z_BACK_ON_HOME 0
+#define ENDSTOP_X_BACK_ON_HOME 10
+#define ENDSTOP_Y_BACK_ON_HOME 10
+#define ENDSTOP_Z_BACK_ON_HOME 10
 #define ALWAYS_CHECK_ENDSTOPS 1
 #define MOVE_X_WHEN_HOMED 0
 #define MOVE_Y_WHEN_HOMED 0
@@ -321,13 +325,13 @@ It also can add a delay to wait for spindle to run on full speed.
 #define INVERT_X2_DIR 0
 #define INVERT_Y_DIR 0
 #define INVERT_Y2_DIR 0
-#define INVERT_Z_DIR 0
+#define INVERT_Z_DIR 1
 #define INVERT_Z2_DIR 0
 #define INVERT_Z3_DIR 0
 #define INVERT_Z4_DIR 0
 #define X_HOME_DIR -1
-#define Y_HOME_DIR -1
-#define Z_HOME_DIR -1
+#define Y_HOME_DIR 1
+#define Z_HOME_DIR 1
 #define X_MAX_LENGTH 200
 #define Y_MAX_LENGTH 200
 #define Z_MAX_LENGTH 120
@@ -390,7 +394,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Y_BACKLASH 0
 #define Z_BACKLASH 0
 #define RAMP_ACCELERATION 1
-#define STEPPER_HIGH_DELAY 0
+#define STEPPER_HIGH_DELAY 1
 #define DIRECTION_DELAY 0
 #define STEP_DOUBLER_FREQUENCY 12000
 #define ALLOW_QUADSTEPPING 1
@@ -472,7 +476,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FAN_KICKSTART_TIME  200
 #define MAX_FAN_PWM 255
 
-        #define FEATURE_WATCHDOG 0
+        #define FEATURE_WATCHDOG 1
 
 // #################### Z-Probing #####################
 
@@ -615,7 +619,7 @@ Values must be in range 1..255
     "yInvert": 0,
     "y2Invert": 0,
     "yInvertEnable": 0,
-    "zInvert": 0,
+    "zInvert": "1",
     "z2Invert": 0,
     "z3Invert": 0,
     "z4Invert": 0,
@@ -678,12 +682,12 @@ Values must be in range 1..255
     ],
     "uiLanguage": 0,
     "uiController": 0,
-    "xMinEndstop": 1,
-    "yMinEndstop": 1,
-    "zMinEndstop": 1,
+    "xMinEndstop": 2,
+    "yMinEndstop": 0,
+    "zMinEndstop": 0,
     "xMaxEndstop": 0,
-    "yMaxEndstop": 0,
-    "zMaxEndstop": 0,
+    "yMaxEndstop": 2,
+    "zMaxEndstop": 2,
     "x2MinEndstop": 0,
     "y2MinEndstop": 0,
     "x2MaxEndstop": 0,
@@ -738,11 +742,11 @@ Values must be in range 1..255
     "disableZ": "0",
     "disableE": "0",
     "xHomeDir": "-1",
-    "yHomeDir": "-1",
-    "zHomeDir": "-1",
-    "xEndstopBack": 1,
-    "yEndstopBack": 1,
-    "zEndstopBack": 0,
+    "yHomeDir": "1",
+    "zHomeDir": "1",
+    "xEndstopBack": 10,
+    "yEndstopBack": 10,
+    "zEndstopBack": 10,
     "deltaSegmentsPerSecondPrint": 180,
     "deltaSegmentsPerSecondTravel": 70,
     "deltaDiagonalRod": 445,
@@ -762,7 +766,7 @@ Values must be in range 1..255
     "deltaYOffsetSteps": 0,
     "deltaZOffsetSteps": 0,
     "deltaSegmentsPerLine": 20,
-    "stepperHighDelay": 0,
+    "stepperHighDelay": 1,
     "directionDelay": 0,
     "stepDoublerFrequency": 12000,
     "allowQuadstepping": "1",
@@ -821,7 +825,7 @@ Values must be in range 1..255
     "servo1Pin": -1,
     "servo2Pin": -1,
     "servo3Pin": -1,
-    "featureWatchdog": "0",
+    "featureWatchdog": "1",
     "hasHeatedBed": "0",
     "enableZProbing": "0",
     "extrudeMaxLength": 160,
@@ -963,8 +967,8 @@ Values must be in range 1..255
     "yEndstopRetestFactor": 3,
     "zEndstopRetestFactor": 3,
     "xMinPin": "ORIG_X_MIN_PIN",
-    "yMinPin": "ORIG_Y_MIN_PIN",
-    "zMinPin": "ORIG_Z_MIN_PIN",
+    "yMinPin": -1,
+    "zMinPin": -1,
     "xMaxPin": "ORIG_X_MAX_PIN",
     "yMaxPin": "ORIG_Y_MAX_PIN",
     "zMaxPin": "ORIG_Z_MAX_PIN",
