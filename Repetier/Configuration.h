@@ -37,7 +37,7 @@
 */
 
 #define NUM_EXTRUDER 1
-#define MOTHERBOARD 33
+#define MOTHERBOARD 37
 #include "pins.h"
 
 // ################## EDIT THESE SETTINGS MANUALLY ################
@@ -64,7 +64,7 @@
 #define BLUETOOTH_BAUD  115200
 #define MIXING_EXTRUDER 0
 
-#define DRIVE_SYSTEM 0
+#define DRIVE_SYSTEM 1
 #define XAXIS_STEPS_PER_MM 80
 #define YAXIS_STEPS_PER_MM 80
 #define ZAXIS_STEPS_PER_MM 80
@@ -293,7 +293,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define max_software_endstop_z true
 #define DOOR_PIN -1
 #define DOOR_PULLUP 1
-#define DOOR_INVERTING 1
+#define DOOR_INVERTING 0
 #define ENDSTOP_X_BACK_MOVE 5
 #define ENDSTOP_Y_BACK_MOVE 5
 #define ENDSTOP_Z_BACK_MOVE 2
@@ -376,7 +376,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define HOMING_FEEDRATE_X 40
 #define HOMING_FEEDRATE_Y 40
 #define HOMING_FEEDRATE_Z 2
-#define HOMING_ORDER HOME_ORDER_ZXY
+#define HOMING_ORDER HOME_ORDER_XYZ
 #define ZHOME_PRE_RAISE 0
 #define ZHOME_PRE_RAISE_DISTANCE 10
 #define RAISE_Z_ON_TOOLCHANGE 0
@@ -542,20 +542,20 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_CHECKSUM_FORCED 0
 #define FEATURE_FAN_CONTROL 1
 #define FEATURE_FAN2_CONTROL 0
-#define FEATURE_CONTROLLER 0
+#define FEATURE_CONTROLLER 2
 #define ADC_KEYPAD_PIN -1
 #define LANGUAGE_EN_ACTIVE 1
-#define LANGUAGE_DE_ACTIVE 1
+#define LANGUAGE_DE_ACTIVE 0
 #define LANGUAGE_NL_ACTIVE 0
-#define LANGUAGE_PT_ACTIVE 1
-#define LANGUAGE_IT_ACTIVE 1
-#define LANGUAGE_ES_ACTIVE 1
+#define LANGUAGE_PT_ACTIVE 0
+#define LANGUAGE_IT_ACTIVE 0
+#define LANGUAGE_ES_ACTIVE 0
 #define LANGUAGE_FI_ACTIVE 0
 #define LANGUAGE_SE_ACTIVE 0
-#define LANGUAGE_FR_ACTIVE 1
+#define LANGUAGE_FR_ACTIVE 0
 #define LANGUAGE_CZ_ACTIVE 0
-#define LANGUAGE_PL_ACTIVE 1
-#define LANGUAGE_TR_ACTIVE 1
+#define LANGUAGE_PL_ACTIVE 0
+#define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "RepRap"
 #define UI_PRINTER_COMPANY "Home made"
 #define UI_PAGES_DURATION 4000
@@ -569,7 +569,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_KEY_FIRST_REPEAT 500
 #define UI_KEY_REDUCE_REPEAT 50
 #define UI_KEY_MIN_REPEAT 50
-#define FEATURE_BEEPER 0
+#define FEATURE_BEEPER 1
 #define CASE_LIGHTS_PIN -1
 #define CASE_LIGHT_DEFAULT_ON 1
 #define UI_START_SCREEN_DELAY 1000
@@ -688,8 +688,8 @@ Values must be in range 1..255
     "y2MinEndstop": 0,
     "x2MaxEndstop": 0,
     "y2MaxEndstop": 0,
-    "motherboard": 33,
-    "driveSystem": 0,
+    "motherboard": 37,
+    "driveSystem": 1,
     "xMaxSpeed": 200,
     "xHomingSpeed": 40,
     "xTravelAcceleration": 1000,
@@ -825,8 +825,8 @@ Values must be in range 1..255
     "hasHeatedBed": "0",
     "enableZProbing": "0",
     "extrudeMaxLength": 160,
-    "homeOrder": "HOME_ORDER_ZXY",
-    "featureController": 0,
+    "homeOrder": "HOME_ORDER_XYZ",
+    "featureController": 2,
     "uiPrinterName": "RepRap",
     "uiPrinterCompany": "Home made",
     "uiPagesDuration": 4000,
@@ -840,7 +840,7 @@ Values must be in range 1..255
     "uiKeyFirstRepeat": 500,
     "uiKeyReduceRepeat": 50,
     "uiKeyMinRepeat": 50,
-    "featureBeeper": "0",
+    "featureBeeper": "1",
     "uiMinHeatedBed": 30,
     "uiMaxHeatedBed": 120,
     "uiMinEtxruderTemp": 170,
@@ -1145,17 +1145,17 @@ Values must be in range 1..255
     "zProbeDelay": 0,
     "uiBedCoating": "1",
     "langEN": "1",
-    "langDE": "1",
+    "langDE": "0",
     "langNL": "0",
-    "langPT": "1",
-    "langIT": "1",
-    "langES": "1",
+    "langPT": "0",
+    "langIT": "0",
+    "langES": "0",
     "langFI": "0",
     "langSE": "0",
-    "langFR": "1",
+    "langFR": "0",
     "langCZ": "0",
-    "langPL": "1",
-    "langTR": "1",
+    "langPL": "0",
+    "langTR": "0",
     "interpolateAccelerationWithZ": 0,
     "accelerationFactorTop": 100,
     "bendingCorrectionA": 0,
@@ -1209,7 +1209,7 @@ Values must be in range 1..255
     "extruderIsZProbe": "0",
     "boardFanMinSpeed": 0,
     "doorPin": -1,
-    "doorEndstop": 1,
+    "doorEndstop": 0,
     "zhomePreRaise": 0,
     "zhomePreRaiseDistance": 10,
     "dualXResolution": "0",
